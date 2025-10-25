@@ -8,19 +8,19 @@ export const todosInitial = [
   {
     id: "2",
     title: "Task 2",
-    description: "Go to the gym",
+    description: "Play Videogames",
     status: "Done",
   },
   {
     id: "3",
     title: "Task 3",
-    description: "Go to the gym",
+    description: "Buy Groceries",
     status: "Done",
   },
   {
     id: "4",
     title: "Task 4",
-    description: "Go to the gym",
+    description: "Learn React Native",
     status: "Active",
   },
 ];

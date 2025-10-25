@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "../assets/styles/styles";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import Feather from "@expo/vector-icons/Feather";
 
 const TodoItem = ({ item, handleTaskStatus, handleTaskDelete }) => {
   return (
@@ -43,17 +43,17 @@ const TodoItem = ({ item, handleTaskStatus, handleTaskDelete }) => {
         >
           {item.status === "Active" ? (
             <TouchableOpacity onPress={() => handleTaskStatus(item.id, "Done")}>
-              <FontAwesome6 name="file-circle-check" size={24} color="black" />
+              <Feather name="check-circle" size={24} color="black" />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity
               onPress={() => handleTaskStatus(item.id, "Active")}
             >
-              <FontAwesome6 name="file-circle-minus" size={24} color="black" />
+              <Feather name="minus-circle" size={24} color="black" />
             </TouchableOpacity>
           )}
           <TouchableOpacity onPress={() => handleTaskDelete(item.id)}>
-            <FontAwesome6 name="trash" size={24} color="black" />
+            <Feather name="trash" size={24} color="black" />
           </TouchableOpacity>
         </View>
       </View>
