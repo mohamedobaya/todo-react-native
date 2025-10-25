@@ -51,7 +51,7 @@ const Home = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      <Header />
+      {/* <Header /> */}
       <NewTodo
         newTodo={newTodo}
         handleTitle={handleTitle}
