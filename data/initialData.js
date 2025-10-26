@@ -24,9 +24,3 @@ export const todosInitial = [
     status: "Active",
   },
 ];
-export const newTodoInitial = {
-  id: Date.now(),
-  title: "",
-  description: "",
-  status: "Active",
-};

@@ -3,8 +3,11 @@ import { useNavigation } from "@react-navigation/native";
 import { PATHS } from "../Router/paths";
 import { styles } from "../assets/styles/styles";
 import Feather from "@expo/vector-icons/Feather";
+import { useDispatch } from "react-redux";
+import { removeTodo, toggleTodo } from "../redux/slices/todos.slice";
 
-const TodoItem = ({ item, handleTaskStatus, handleTaskDelete }) => {
+const TodoItem = ({ item }) => {
+  const dispatch = useDispatch();
   const { navigate } = useNavigation();
 
   return (
@@ -49,19 +52,15 @@ const TodoItem = ({ item, handleTaskStatus, handleTaskDelete }) => {
             }}
           >
             {item.status === "Active" ? (
-              <TouchableOpacity
-                onPress={() => handleTaskStatus(item.id, "Done")}
-              >
+              <TouchableOpacity onPress={() => dispatch(toggleTodo(item.id))}>
                 <Feather name="check-circle" size={24} color="black" />
               </TouchableOpacity>
             ) : (
-              <TouchableOpacity
-                onPress={() => handleTaskStatus(item.id, "Active")}
-              >
+              <TouchableOpacity onPress={() => dispatch(toggleTodo(item.id))}>
                 <Feather name="minus-circle" size={24} color="black" />
               </TouchableOpacity>
             )}
-            <TouchableOpacity onPress={() => handleTaskDelete(item.id)}>
+            <TouchableOpacity onPress={() => dispatch(removeTodo(item.id))}>
               <Feather name="trash" size={24} color="black" />
             </TouchableOpacity>
           </View>

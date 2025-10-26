@@ -1,11 +1,13 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { useSelector } from "react-redux";
+import TodoList from "../components/TodoList";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const CompletedScreen = () => {
+  const { todos } = useSelector((state) => state.todos);
   return (
-    <View>
-      <Text>CompletedScreen</Text>
-    </View>
+    <SafeAreaView>
+      <TodoList todos={todos.filter((todo) => todo.status === "Done")} />
+    </SafeAreaView>
   );
 };
 

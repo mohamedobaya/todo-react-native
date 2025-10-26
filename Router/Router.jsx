@@ -1,4 +1,4 @@
-import { TouchableOpacity } from "react-native";
+import { Platform, TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AntDesign from "@expo/vector-icons/AntDesign";
@@ -24,6 +24,7 @@ const Router = () => {
             fontWeight: "bold",
           },
           tabBarShowLabel: false, // Toggle label here
+          headerShown: Platform.OS === "ios",
           tabBarButton: (props) => (
             <TouchableOpacity
               {...props}
